@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Spiel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Spieltitel"/>
+                <xs:element ref="Kategorie" minOccurs="1" maxOccurs="5"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Kategorie">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Kategorietitel"/>
+                <xs:element ref="Frage" minOccurs="1" maxOccurs="5"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Frage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Fragestellung"/>
+                <xs:element name="Antwort"/>
+                <xs:element name="Wert"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

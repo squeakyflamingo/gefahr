@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14pt;
+  font-family: "Nunito Sans";
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 7vh;
+  grid-template-columns: 1fr;
+}
+
+.grid5Col {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0.75rem;
+}
+
+.grid5Row {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 1fr;
+  row-gap: 0.75rem;
+}
+
+.game {
+  padding: 0.5rem;
+}
+.game .category {
+  display: grid;
+  grid-template-rows: minmax(5vh, auto) 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 0.75rem;
+}
+.game .category .categoryTitle {
+  text-align: center;
+  color: white;
+  padding-bottom: 0.25rem;
+}
+.game .category .question {
+  background-color: #25008b;
+  width: 100%;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+  font-size: 1.75rem;
+  text-shadow: 0.25rem 0.25rem 0.5rem black;
+}
+.game .category .question .value {
+  padding: 0.5rem;
+}
+.game .category .question.completed {
+  color: lightgrey;
+  background-color: grey;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+.overlayContainer {
+  height: 0;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.overlay.shown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay > .overlayContent {
+  display: grid;
+  grid-template-rows: 1fr 10%;
+  padding: 1rem;
+  height: 50%;
+  width: 50%;
+  background-color: darkgray;
+  color: black;
+  border-radius: 0.5rem;
+}
+.overlay > .overlayContent h1 {
+  margin: auto;
+}
+.overlay.overlayAnswer .answer .answerButtons > button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0.125rem;
+}
+.overlay.overlayAnswer .answer .answerButtons > button.correct {
+  background-color: #25008b;
+  color: gold;
+}
+.overlay.overlayAnswer .answer .answerButtons > button.free {
+  background-color: white;
+}
+.overlay.overlayAnswer .answer .answerButtons > button.free:not(.shown) {
+  display: none;
+}
+.overlay.overlayTeambuzzer {
+  color: white;
+}
+.overlay.overlayTeambuzzer.team1 {
+  background-color: darkred;
+}
+.overlay.overlayTeambuzzer.team2 {
+  background-color: darkgreen;
+}
+
+.tools {
+  height: 7vh;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 5rem 1fr;
+}
+.tools .resetBuzzerButton {
+  background-color: white;
+  color: black;
+  padding: 0.25rem;
+  height: 3.5vh;
+  margin-top: 1.25vh;
+  border: none;
+  border-radius: 0.25rem;
+}
+.tools .resetBuzzerButton:not(.shown) {
+  display: none;
+}
+.tools .stats {
+  display: flex;
+  flex-direction: row;
+}
+.tools .stats > div:first-child {
+  margin-right: 2rem;
+}
+.tools .stats.team1 {
+  justify-content: end;
+  padding-right: 2rem;
+}
+.tools .stats.team2 {
+  justify-content: start;
+  padding-left: 2rem;
+}
+.tools .stats .buzzerIndicator,
+.tools .stats .pointsContainer {
+  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tools .stats .buzzerIndicator.team1,
+.tools .stats .pointsContainer.team1 {
+  background-color: darkred;
+}
+.tools .stats .buzzerIndicator.team2,
+.tools .stats .pointsContainer.team2 {
+  background-color: darkgreen;
+}
+.tools .stats .buzzerIndicator:not(.shown) {
+  display: none;
+}
+
+/*# sourceMappingURL=game.css.map */

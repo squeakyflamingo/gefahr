@@ -1,0 +1,225 @@
+$background: black;
+$card-bg: rgb(37, 0, 139);
+$card-bg-completed: grey;
+$text: gold;
+$text-completed: lightgrey;
+
+$team1: darkred;
+$team2: darkgreen;
+
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-size: 14pt;
+    font-family: "Nunito Sans";
+}
+
+body {
+    background-color: $background;
+
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 1fr 7vh;
+    grid-template-columns: 1fr;
+}
+
+.grid5Col {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: .75rem;
+}
+
+.grid5Row {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    row-gap: .75rem;
+}
+
+.game {
+    padding: 0.5rem;
+
+    .category {
+        display: grid;
+        grid-template-rows: minmax(5vh, auto) 1fr;
+        grid-template-columns: 1fr;
+        row-gap: 0.75rem;
+
+        .categoryTitle {
+            text-align: center;
+            color: white;
+            padding-bottom: .25rem;
+        }
+
+        .question {
+            background-color: $card-bg;
+            width: 100%;
+            border-radius: 0.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $text;
+            font-size: 1.75rem;
+            text-shadow: .25rem .25rem .5rem black;
+
+            .value {
+                padding: 0.5rem;
+            }
+
+            &.completed {
+                color: $text-completed;
+                background-color: $card-bg-completed;
+                text-shadow: none;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.overlayContainer {
+    height: 0;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+
+    &.shown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    >.overlayContent {
+        display: grid;
+        grid-template-rows: 1fr 10%;
+        padding: 1rem;
+        height: 50%;
+        width: 50%;
+        background-color: darkgray;
+        color: black;
+        border-radius: 0.5rem;
+
+        h1 {
+            margin: auto;
+        }
+    }
+
+    &.overlayAnswer {
+        .answer {
+
+            .answerButtons>button {
+                padding: 0.5rem;
+                border: none;
+                border-radius: 0.25rem;
+                margin: 0.125rem;
+
+                &.correct {
+                    background-color: $card-bg;
+                    color: $text;
+                }
+
+                &.free {
+                    background-color: white;
+
+                    &:not(.shown) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.overlayQuestion {
+        .question {}
+    }
+
+    &.overlayTeambuzzer {
+        color: white;
+
+        &.team1 {
+            background-color: $team1;
+        }
+
+        &.team2 {
+            background-color: $team2;
+        }
+    }
+}
+
+.tools {
+    height: 7vh;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 5rem 1fr;
+
+    .resetBuzzerButton {
+        background-color: white;
+        color: black;
+        padding: 0.25rem;
+        height: 3.5vh;
+        margin-top: 1.25vh;
+        border: none;
+        border-radius: 0.25rem;
+
+        &:not(.shown) {
+            display: none;
+        }
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: row;
+
+        >div:first-child {
+            margin-right: 2rem;
+        }
+
+        &.team1 {
+            justify-content: end;
+            padding-right: 2rem;
+        }
+
+        &.team2 {
+            justify-content: start;
+            padding-left: 2rem;
+        }
+
+        .buzzerIndicator,
+        .pointsContainer {
+            padding: 0.75rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.team1 {
+                background-color: $team1;
+            }
+
+            &.team2 {
+                background-color: $team2;
+            }
+        }
+
+        .buzzerIndicator:not(.shown) {
+            display: none;
+        }
+    }
+}
