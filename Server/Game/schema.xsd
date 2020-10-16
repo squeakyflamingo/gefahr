@@ -12,11 +12,11 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Kategorietitel"/>
-                <xs:element ref="Frage" minOccurs="1" maxOccurs="5"/>
+                <xs:element ref="Aufgabe" minOccurs="1" maxOccurs="5"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Frage">
+    <xs:element name="Aufgabe">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Fragestellung"/>

@@ -2,143 +2,143 @@
 <Spiel>
     <Spieltitel>Testspiel</Spieltitel>
     <Kategorie>
-        <Kategorietitel>Kategorie Kategorie Kategorie 1</Kategorietitel>
-        <Frage>
+        <Kategorietitel>Kategorie 1</Kategorietitel>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>100</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>200</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>300</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>400</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>500</Wert>
-        </Frage>
+        </Aufgabe>
     </Kategorie>
     <Kategorie>
-        <Kategorietitel>Kategorie Kategorie Kategorie 2</Kategorietitel>
-        <Frage>
+        <Kategorietitel>Kategorie 2</Kategorietitel>
+        <Aufgabe>
 		    <Fragestellung>Frage?</Fragestellung>
 		    <Antwort>Antwort.</Antwort>
             <Wert>100</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>200</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>300</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>400</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>500</Wert>
-        </Frage>
+        </Aufgabe>
     </Kategorie>
     <Kategorie>
-        <Kategorietitel>Kategorie Kategorie Kategorie 3</Kategorietitel>
-        <Frage>
+        <Kategorietitel>Kategorie 3</Kategorietitel>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>100</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>200</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>300</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>400</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>500</Wert>
-        </Frage>
+        </Aufgabe>
     </Kategorie>
     <Kategorie>
-        <Kategorietitel>Kategorie Kategorie Kategorie 4</Kategorietitel>    
-        <Frage>
+        <Kategorietitel>Kategorie 4</Kategorietitel>    
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>100</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>200</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>300</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>400</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>500</Wert>
-        </Frage>
+        </Aufgabe>
     </Kategorie>
     <Kategorie>
-        <Kategorietitel>Kategorie Kategorie Kategorie 5</Kategorietitel>    
-        <Frage>
+        <Kategorietitel>Kategorie 5</Kategorietitel>    
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>100</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>200</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>300</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>400</Wert>
-        </Frage>
-        <Frage>
+        </Aufgabe>
+        <Aufgabe>
             <Fragestellung>Frage?</Fragestellung>
             <Antwort>Antwort.</Antwort>
             <Wert>500</Wert>
-        </Frage>
+        </Aufgabe>
     </Kategorie>
 </Spiel>
