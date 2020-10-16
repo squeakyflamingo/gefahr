@@ -74,6 +74,6 @@ const closeQuestion = (element, value) => {
     if (buzzered != 0) {
         points = document.querySelector(`.points#${buzzered}`)
         points.innerHTML = parseInt(points.innerHTML) + parseInt(value)
-        elementById(`question${element.id.slice(-2)}`).classList.add("completed")
+        elementById(`task${element.id.slice(-2)}`).classList.add("completed")
     }
 }

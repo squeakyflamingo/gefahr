@@ -46,7 +46,7 @@ body {
   color: white;
   padding-bottom: 0.25rem;
 }
-.game .category .question {
+.game .category .task {
   background-color: #25008b;
   width: 100%;
   border-radius: 0.25rem;
@@ -57,10 +57,10 @@ body {
   font-size: 1.75rem;
   text-shadow: 0.25rem 0.25rem 0.5rem black;
 }
-.game .category .question .value {
+.game .category .task .value {
   padding: 0.5rem;
 }
-.game .category .question.completed {
+.game .category .task.completed {
   color: lightgrey;
   background-color: grey;
   text-shadow: none;

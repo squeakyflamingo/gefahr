@@ -1,4 +1,4 @@
-<div id="question<?php echo $category.$task; ?>" class="question" onclick="showAnswer('<?php echo $category.$task; ?>')">
+<div id="task<?php echo $category.$task; ?>" class="task" onclick="showAnswer('<?php echo $category.$task; ?>')">
     <h1 class="value">
         <?php echo $value; ?>
     </h1>

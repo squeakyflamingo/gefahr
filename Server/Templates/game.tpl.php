@@ -47,7 +47,7 @@
         </div>
     </div>  
 </body>
-<script src="game.js"></script>
+<script src="javascript/game.js"></script>
 <script>
     startBuzzer();
 </script>
