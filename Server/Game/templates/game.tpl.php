@@ -40,10 +40,10 @@
         } ?>
 
         <div id="team1" class="overlay overlayTeambuzzer team1" onclick="hideElement(this)">
-            <h1>Team 1 hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teamname1']; ?> hat gebuzzert!</h1>
         </div>
         <div id="team2" class="overlay overlayTeambuzzer team2" onclick="hideElement(this)">
-            <h1>Team 2 hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teamname2']; ?> hat gebuzzert!</h1>
         </div>
     </div>  
 </body>
