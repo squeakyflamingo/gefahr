@@ -1,37 +1,37 @@
 <?php
 namespace Game;
 
-use Game\TemplateRenderer;
+use TemplateRenderer\TemplateRenderer;
 
 class Game
 {
     private $gametitle;
     private $categories;
-    private $templateRenderer;
+    private $renderer;
 
-    public function __construct(array $xmlArray, string $templateDirectory)
+    public function __construct(array $xmlArray)
     {
         $this->gametitle = $xmlArray['Spieltitel'];
         $this->categories = $xmlArray['Kategorie'];
-        $this->templateRenderer = new TemplateRenderer($templateDirectory);
+        $this->renderer = new TemplateRenderer(__DIR__ . '/templates');
     }
     
-    public function start()
+    public function start(): string
     {
-        return $this->templateRenderer->renderTemplate('game', [
+        return $this->renderer->renderTemplate('game', [
             'gametitle' => $this->gametitle,
             'categoryColumns' => $this->renderCategoryColumns(),
             'overlayAnswersAndQuestions' => $this->renderOverlayAnswersAndQuestions(),
         ]);
     }
 
-    private function renderCategoryColumns()
+    private function renderCategoryColumns(): array
     {
         $categoryNumber = 1;
         $categoryColumns = [];
 
         foreach ($this->categories as $category) {
-            $categoryColumns[] = $this->templateRenderer->renderTemplate('categoryColumn', [
+            $categoryColumns[] = $this->renderer->renderTemplate('categoryColumn', [
                 'categorytitle' => $this->getCategorytitleFromCategory($category),
                 'valueFields' => $this->renderValueFields($categoryNumber, $category),
             ]);
@@ -41,13 +41,13 @@ class Game
         return $categoryColumns;
     }
 
-    private function renderValueFields(int $categoryNumber, array $category)
+    private function renderValueFields(int $categoryNumber, array $category): array
     {
         $taskNumber = 1;
         $valueFields = [];
 
         foreach ($this->getTasksFromCategory($category) as $task) {
-            $valueFields[] = $this->templateRenderer->renderTemplate('valueField', [
+            $valueFields[] = $this->renderer->renderTemplate('valueField', [
                 'category' => $categoryNumber,
                 'task' => $taskNumber,
                 'value' => $this->getValueFromTask($task),
@@ -58,7 +58,8 @@ class Game
         return $valueFields;
     }
 
-    private function renderOverlayAnswersAndQuestions() {
+    private function renderOverlayAnswersAndQuestions(): array
+    {
         $categoryNumber = 1;
         $overlayAnswersAndQuestions = [];
 
@@ -66,7 +67,7 @@ class Game
             $taskNumber = 1;
 
             foreach ($this->getTasksFromCategory($category) as $task) {
-                $overlayAnswersAndQuestions[] = $this->templateRenderer->renderTemplate('overlayAnswerAndQuestion', [
+                $overlayAnswersAndQuestions[] = $this->renderer->renderTemplate('overlayAnswerAndQuestion', [
                     'category' => $categoryNumber,
                     'task' => $taskNumber,
                     'answer' => $this->getAnswerFromTask($task),
@@ -83,27 +84,27 @@ class Game
         return $overlayAnswersAndQuestions;
     }
 
-    private function getCategorytitleFromCategory(array $category)
+    private function getCategorytitleFromCategory(array $category): string
     {
         return $category['Kategorietitel'];
     }
 
-    private function getTasksFromCategory(array $category)
+    private function getTasksFromCategory(array $category): array
     {
         return $category['Aufgabe'];
     }
 
-    private function getQuestionFromTask(array $task)
+    private function getQuestionFromTask(array $task): string
     {
         return $task['Fragestellung'];
     }
 
-    private function getAnswerFromTask(array $task)
+    private function getAnswerFromTask(array $task): string
     {
         return $task['Antwort'];
     }
 
-    private function getValueFromTask(array $task)
+    private function getValueFromTask(array $task): string
     {
         return $task['Wert'];
     }

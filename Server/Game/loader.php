@@ -1,10 +1,11 @@
 <?php
-$classes = [
+$files = [
+    '../Spiele/Teamnamen.php',
+    'TemplateRenderer/TemplateRenderer.php',
     'Game/Game.php',
     'Game/XMLParser.php',
-    'Game/TemplateRenderer.php',
 ];
 
-foreach ($classes as $class) {
-    require_once($class);
+foreach ($files as $file) {
+    require_once($file);
 }

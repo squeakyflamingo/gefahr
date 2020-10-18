@@ -1,5 +1,5 @@
 <?php
-namespace Game;
+namespace TemplateRenderer;
 
 class TemplateRenderer
 {
@@ -10,7 +10,7 @@ class TemplateRenderer
         $this->templateDirectory = $templateDirectory;
     }
 
-    public function renderTemplate(string $templateName, array $arguments = [])
+    public function renderTemplate(string $templateName, array $arguments = []): string
     {
         ob_start();
 
@@ -19,6 +19,7 @@ class TemplateRenderer
         }
 
         include("{$this->templateDirectory}/{$templateName}.tpl.php");
+        
         return ob_get_clean();
     }
 }
