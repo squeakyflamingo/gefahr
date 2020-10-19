@@ -2,8 +2,7 @@
 $files = [
     '../Spiele/Konfiguration.php',
     'TemplateRenderer/TemplateRenderer.php',
-    'Game/Game.php',
-    'Game/XMLParser.php',
+    'BuzzerClient/BuzzerClient.php',
 ];
 
 foreach ($files as $file) {

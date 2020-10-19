@@ -36,18 +36,6 @@ const buzzerAction = (team) => {
     if (currentIdentifier != 0) showElement(elementById(`free${currentIdentifier}`))
 }
 
-const showElement = (element) => {
-    element.classList.add("shown")
-}
-
-const hideElement = (element) => {
-    element.classList.remove("shown")
-}
-
-const elementById = (id) => {
-    return document.getElementById(id)
-}
-
 const resetBuzzer = () => {
     hideElement(reset)
     hideElement(document.querySelector(`.buzzerIndicator#${buzzered}`))
