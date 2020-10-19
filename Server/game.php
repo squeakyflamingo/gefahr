@@ -1,5 +1,4 @@
 <?php
-require_once('../Spiele/Teamnamen.php');
 require_once("Game/loader.php");
 
 use Game\XMLParser;

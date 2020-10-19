@@ -40,13 +40,14 @@
         } ?>
 
         <div id="team1" class="overlay overlayTeambuzzer team1" onclick="hideElement(this)">
-            <h1><?php echo $GLOBALS['teamname1']; ?> hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teamnamen'][1]; ?> hat gebuzzert!</h1>
         </div>
         <div id="team2" class="overlay overlayTeambuzzer team2" onclick="hideElement(this)">
-            <h1><?php echo $GLOBALS['teamname2']; ?> hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teamnamen'][2]; ?> hat gebuzzert!</h1>
         </div>
     </div>  
 </body>
+<script src="javascript/common.js"></script>
 <script src="javascript/game.js"></script>
 <script>
     startBuzzer();
