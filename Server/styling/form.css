@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14pt;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffd700;
+}
+
+body {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: Nunito, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select, button, .formGroup {
+  width: 400px;
+  max-width: 90%;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  text-align: left;
+}
+
+select, input, button {
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  display: block;
+  padding: 0.5rem;
+}
+
+select, input {
+  background-color: #25008b;
+  color: lightgrey;
+}
+
+input[type=color] {
+  height: 3rem;
+  padding: 0.5rem;
+}
+
+label {
+  color: lightgrey;
+  margin-bottom: 0.25rem;
+}
+
+input[type=text] {
+  width: calc(100% - 1rem);
+}
+
+input[type=color] {
+  width: 100%;
+}
+
+button {
+  background-color: #25008b;
+  color: #ffd700;
+}
+
+select.custom-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFD700%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.5em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+}
+
+/*# sourceMappingURL=form.css.map */

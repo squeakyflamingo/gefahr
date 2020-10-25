@@ -5,14 +5,18 @@
 
 html {
   font-size: 14pt;
-  font-family: "Nunito Sans";
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
-  background-color: black;
+  background: black;
+  width: 100vw;
   height: 100vh;
-  width: 100%;
   overflow: hidden;
+  color: #ffd700;
+}
+
+body {
   display: grid;
   grid-template-rows: 1fr 7vh;
   grid-template-columns: 1fr;
@@ -53,7 +57,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: gold;
+  color: #ffd700;
   font-size: 1.75rem;
   text-shadow: 0.25rem 0.25rem 0.5rem black;
 }
@@ -108,7 +112,7 @@ body {
 }
 .overlay.overlayAnswer .answer .answerButtons > button.correct {
   background-color: #25008b;
-  color: gold;
+  color: #ffd700;
 }
 .overlay.overlayAnswer .answer .answerButtons > button.free {
   background-color: white;
@@ -116,14 +120,13 @@ body {
 .overlay.overlayAnswer .answer .answerButtons > button.free:not(.shown) {
   display: none;
 }
-.overlay.overlayTeambuzzer {
-  color: white;
-}
 .overlay.overlayTeambuzzer.team1 {
-  background-color: darkred;
+  color: var(--team1text);
+  background-color: var(--team1bg);
 }
 .overlay.overlayTeambuzzer.team2 {
-  background-color: darkgreen;
+  color: var(--team2text);
+  background-color: var(--team2bg);
 }
 
 .tools {
@@ -170,11 +173,13 @@ body {
 }
 .tools .stats .buzzerIndicator.team1,
 .tools .stats .pointsContainer.team1 {
-  background-color: darkred;
+  color: var(--team1text);
+  background-color: var(--team1bg);
 }
 .tools .stats .buzzerIndicator.team2,
 .tools .stats .pointsContainer.team2 {
-  background-color: darkgreen;
+  color: var(--team2text);
+  background-color: var(--team2bg);
 }
 .tools .stats .buzzerIndicator:not(.shown) {
   display: none;

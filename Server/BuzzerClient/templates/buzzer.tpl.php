@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jeopardy! - <?php echo $teamname; ?></title>
-    <link rel="stylesheet" href="styling/client.css">
+    <link rel="stylesheet" href="styling/buzzer.css">
+    <?php include 'styling/teamColors.tpl.php'; ?>
 </head>
 <body id="client">
     <h1 class="team"><?php echo $teamname; ?></h1>

@@ -1,6 +1,6 @@
 <?php
 $files = [
-    '../Spiele/Konfiguration.php',
+    'api/API.php',
     'TemplateRenderer/TemplateRenderer.php',
     'BuzzerClient/BuzzerClient.php',
 ];

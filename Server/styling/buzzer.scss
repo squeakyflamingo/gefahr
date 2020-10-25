@@ -1,0 +1,54 @@
+@import 'colors', 'setup';
+
+body {
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: Nunito, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+
+  &.team {
+    position: absolute;
+    top: 1rem;
+  }
+}
+
+button {
+  border: none;
+  border-radius: 1rem;
+  width: 400px;
+  max-width: 90%;
+  font-size: 2rem;
+
+  &.team1 {
+    color: $team1text;
+    background-color: $team1bg;
+  }
+
+  &.team2 {
+    color: $team2text;
+    background-color: $team2bg;
+  }
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $card-bg;
+
+  &.shown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

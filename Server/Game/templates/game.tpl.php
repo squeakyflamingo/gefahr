@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jeopardy! - <?php echo $gametitle; ?></title>
     <link rel="stylesheet" href="styling/game.css">
+    <?php include 'styling/teamColors.tpl.php'; ?>
 </head>
 <body>
     <div class="game grid5Col">
@@ -40,10 +41,10 @@
         } ?>
 
         <div id="team1" class="overlay overlayTeambuzzer team1" onclick="hideElement(this)">
-            <h1><?php echo $GLOBALS['teamnamen'][1]; ?> hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teams'][1]['name']; ?> hat gebuzzert!</h1>
         </div>
         <div id="team2" class="overlay overlayTeambuzzer team2" onclick="hideElement(this)">
-            <h1><?php echo $GLOBALS['teamnamen'][2]; ?> hat gebuzzert!</h1>
+            <h1><?php echo $GLOBALS['teams'][2]['name']; ?> hat gebuzzert!</h1>
         </div>
     </div>  
 </body>

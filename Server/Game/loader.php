@@ -1,11 +1,12 @@
 <?php
 $files = [
-    '../Spiele/Konfiguration.php',
+    'api/API.php',
     'TemplateRenderer/TemplateRenderer.php',
+    'TemplateRenderer/TemplateService.php',
     'Game/Game.php',
-    'Game/XMLParser.php',
+    'Game/GamefileManager.php',
 ];
 
 foreach ($files as $file) {
-    require_once($file);
+    require_once $file;
 }

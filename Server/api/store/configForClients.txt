@@ -1,0 +1,1 @@
+{"1":{"name":"Team 1","color":"#b1fc9e","textcolor":"#000000"},"2":{"name":"Team 2","color":"#262341","textcolor":"#FFFFFF"}}

@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14pt;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffd700;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: Nunito, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+h1.team {
+  position: absolute;
+  top: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 1rem;
+  width: 400px;
+  max-width: 90%;
+  font-size: 2rem;
+}
+button.team1 {
+  color: var(--team1text);
+  background-color: var(--team1bg);
+}
+button.team2 {
+  color: var(--team2text);
+  background-color: var(--team2bg);
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #25008b;
+}
+.overlay.shown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=buzzer.css.map */

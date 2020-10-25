@@ -1,30 +1,6 @@
-$background: black;
-$card-bg: rgb(37, 0, 139);
-$card-bg-completed: grey;
-$text: gold;
-$text-completed: lightgrey;
-
-$team1: darkred;
-$team2: darkgreen;
-
-
-* {
-    margin: 0;
-    padding: 0
-}
-
-html {
-    font-size: 14pt;
-    font-family: "Nunito Sans";
-}
+@import 'colors', 'setup';
 
 body {
-    background-color: $background;
-
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-
     display: grid;
     grid-template-rows: 1fr 7vh;
     grid-template-columns: 1fr;
@@ -145,14 +121,14 @@ body {
     }
 
     &.overlayTeambuzzer {
-        color: white;
-
         &.team1 {
-            background-color: $team1;
+            color: $team1text;
+            background-color: $team1bg;
         }
 
         &.team2 {
-            background-color: $team2;
+            color: $team2text;
+            background-color: $team2bg;
         }
     }
 }
@@ -205,11 +181,13 @@ body {
             align-items: center;
 
             &.team1 {
-                background-color: $team1;
+                color: $team1text;
+                background-color: $team1bg;
             }
 
             &.team2 {
-                background-color: $team2;
+                color: $team2text;
+                background-color: $team2bg;
             }
         }
 

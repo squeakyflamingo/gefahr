@@ -1,24 +1,76 @@
 <?php
+
 namespace Game;
 
+use Api\API;
 use TemplateRenderer\TemplateRenderer;
+use TemplateRenderer\TemplateService;
 
 class Game
 {
+    private $templateRenderer;
+    private $gamefileManager;
+
     private $gametitle;
     private $categories;
-    private $renderer;
 
-    public function __construct(array $xmlArray)
+    public function __construct()
     {
-        $this->gametitle = $xmlArray['Spieltitel'];
-        $this->categories = $xmlArray['Kategorie'];
-        $this->renderer = new TemplateRenderer(__DIR__ . '/templates');
+        $this->templateRenderer = new TemplateRenderer(__DIR__ . '/templates');
+        $this->gamefileManager = new GamefileManager('../Spiele');
     }
-    
+
     public function start(): string
     {
-        return $this->renderer->renderTemplate('game', [
+        if (!empty($_POST)) {
+            $team1 = [];
+            $team2 = [];
+
+            $team1['name'] = $_POST['team1name'] != '' ? $_POST['team1name'] : 'Team 1';
+            $team2['name'] = $_POST['team2name'] != '' ? $_POST['team2name'] : 'Team 2';
+
+            $team1['color'] = $_POST['team1color'];
+            $team2['color'] = $_POST['team2color'];
+
+            $team1['textcolor'] = TemplateService::getContrastColor($team1['color']);
+            $team2['textcolor'] = TemplateService::getContrastColor($team2['color']);
+
+            $GLOBALS['teams'][1] = $team1;
+            $GLOBALS['teams'][2] = $team2;
+
+            $api = new API();
+            $api->setConfigForClients($GLOBALS['teams']);
+
+            $gamearray = $this->gamefileManager->getArrayFromGamefile((string) $_POST['gamefile']);
+            $this->gametitle = $gamearray['Spieltitel'];
+            $this->categories = $gamearray['Kategorie'];
+
+            return $this->renderGame();
+        }
+
+        return $this->renderGameConfiguratorForm();
+    }
+
+    private function renderGameConfiguratorForm(): string
+    {
+        $validFilenames = [];
+        $filenames = $this->gamefileManager->getGamefileNames();
+
+        foreach ($filenames as $filename) {
+            $filename = substr($filename, 0, -4);
+            if($this->gamefileManager->validateXml($filename)) {
+                $validFilenames[] = $filename;
+            }
+        }
+
+        return $this->templateRenderer->renderTemplate('gameConfigurator', [
+            'filenames' => $validFilenames
+        ]);
+    }
+
+    private function renderGame(): string
+    {
+        return $this->templateRenderer->renderTemplate('game', [
             'gametitle' => $this->gametitle,
             'categoryColumns' => $this->renderCategoryColumns(),
             'overlayAnswersAndQuestions' => $this->renderOverlayAnswersAndQuestions(),
@@ -31,7 +83,7 @@ class Game
         $categoryColumns = [];
 
         foreach ($this->categories as $category) {
-            $categoryColumns[] = $this->renderer->renderTemplate('categoryColumn', [
+            $categoryColumns[] = $this->templateRenderer->renderTemplate('categoryColumn', [
                 'categorytitle' => $this->getCategorytitleFromCategory($category),
                 'valueFields' => $this->renderValueFields($categoryNumber, $category),
             ]);
@@ -47,7 +99,7 @@ class Game
         $valueFields = [];
 
         foreach ($this->getTasksFromCategory($category) as $task) {
-            $valueFields[] = $this->renderer->renderTemplate('valueField', [
+            $valueFields[] = $this->templateRenderer->renderTemplate('valueField', [
                 'category' => $categoryNumber,
                 'task' => $taskNumber,
                 'value' => $this->getValueFromTask($task),
@@ -67,7 +119,7 @@ class Game
             $taskNumber = 1;
 
             foreach ($this->getTasksFromCategory($category) as $task) {
-                $overlayAnswersAndQuestions[] = $this->renderer->renderTemplate('overlayAnswerAndQuestion', [
+                $overlayAnswersAndQuestions[] = $this->templateRenderer->renderTemplate('overlayAnswerAndQuestion', [
                     'category' => $categoryNumber,
                     'task' => $taskNumber,
                     'answer' => $this->getAnswerFromTask($task),
@@ -108,5 +160,4 @@ class Game
     {
         return $task['Wert'];
     }
-
 }

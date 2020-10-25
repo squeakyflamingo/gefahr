@@ -1,1 +1,8 @@
-<?php echo file_get_contents("store.txt"); ?>
+<?php
+require_once 'API.php';
+
+use Api\API;
+
+$api = new API(true);
+
+echo $api->getBuzzerState();

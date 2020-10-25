@@ -1,12 +1,13 @@
 <?php
-$state = (file_get_contents('store.txt') == "reset");
+require_once ('API.php');
 
-if(isset($_GET['team']) && $state === true) {
-    file_put_contents('store.txt', 'team' . $_GET['team']);
+use Api\API;
+
+$api = new API(true);
+
+if ($api->getBuzzerState() == 'reset' && isset($_GET['team'])) {
+    $api->setBuzzerState('team'.$_GET['team']);
+} elseif (isset($_GET['reset'])) {
+    $api->setBuzzerState('reset');
 }
 
-if(isset($_GET['reset']) && $state === false) {
-    file_put_contents('store.txt', 'reset');
-}
-
-?>
