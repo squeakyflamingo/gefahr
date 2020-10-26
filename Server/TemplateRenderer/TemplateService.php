@@ -1,13 +1,24 @@
 <?php
 namespace TemplateRenderer;
 
+/**
+ * Class TemplateService
+ * @package TemplateRenderer
+ */
 class TemplateService
 {
+    /**
+     * TemplateService constructor.
+     */
     public function __construct()
     {
     }
 
-    static function getContrastColor($hexColor)
+    /**
+     * @param $hexColor
+     * @return string
+     */
+    static function getContrastColor(string $hexColor): string
     {
         $R1 = hexdec(substr($hexColor, 1, 2));
         $G1 = hexdec(substr($hexColor, 3, 2));

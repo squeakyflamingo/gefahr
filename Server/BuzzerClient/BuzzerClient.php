@@ -4,9 +4,19 @@ namespace BuzzerClient;
 use Api\API;
 use TemplateRenderer\TemplateRenderer;
 
+/**
+ * Class BuzzerClient
+ * @package BuzzerClient
+ */
 class BuzzerClient {
+    /**
+     * @var TemplateRenderer
+     */
     private $renderer;
 
+    /**
+     * BuzzerClient constructor.
+     */
     public function __construct()
     {
         $this->renderer = new TemplateRenderer(__DIR__ . '/templates');
@@ -15,6 +25,9 @@ class BuzzerClient {
         $GLOBALS['teams'] = $api->getConfigForClients();
     }
 
+    /**
+     * @return string
+     */
     public function start(): string
     {
         if(isset($_POST['team'])) {

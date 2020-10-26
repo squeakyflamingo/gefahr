@@ -6,20 +6,44 @@ use Api\API;
 use TemplateRenderer\TemplateRenderer;
 use TemplateRenderer\TemplateService;
 
+/**
+ * Class Game
+ * @package Game
+ */
 class Game
 {
+    /**
+     * @var TemplateRenderer
+     */
     private $templateRenderer;
+
+    /**
+     * @var GamefileManager
+     */
     private $gamefileManager;
 
+    /**
+     * @var
+     */
     private $gametitle;
+
+    /**
+     * @var
+     */
     private $categories;
 
+    /**
+     * Game constructor.
+     */
     public function __construct()
     {
         $this->templateRenderer = new TemplateRenderer(__DIR__ . '/templates');
         $this->gamefileManager = new GamefileManager('../Spiele');
     }
 
+    /**
+     * @return string
+     */
     public function start(): string
     {
         if (!empty($_POST)) {
@@ -51,6 +75,9 @@ class Game
         return $this->renderGameConfiguratorForm();
     }
 
+    /**
+     * @return string
+     */
     private function renderGameConfiguratorForm(): string
     {
         $validFilenames = [];
@@ -68,6 +95,9 @@ class Game
         ]);
     }
 
+    /**
+     * @return string
+     */
     private function renderGame(): string
     {
         return $this->templateRenderer->renderTemplate('game', [
@@ -77,6 +107,9 @@ class Game
         ]);
     }
 
+    /**
+     * @return array
+     */
     private function renderCategoryColumns(): array
     {
         $categoryNumber = 1;
@@ -93,6 +126,11 @@ class Game
         return $categoryColumns;
     }
 
+    /**
+     * @param int $categoryNumber
+     * @param array $category
+     * @return array
+     */
     private function renderValueFields(int $categoryNumber, array $category): array
     {
         $taskNumber = 1;
@@ -110,6 +148,9 @@ class Game
         return $valueFields;
     }
 
+    /**
+     * @return array
+     */
     private function renderOverlayAnswersAndQuestions(): array
     {
         $categoryNumber = 1;
@@ -136,26 +177,46 @@ class Game
         return $overlayAnswersAndQuestions;
     }
 
+    /**
+     * @param array $category
+     * @return string
+     */
     private function getCategorytitleFromCategory(array $category): string
     {
         return $category['Kategorietitel'];
     }
 
+    /**
+     * @param array $category
+     * @return array
+     */
     private function getTasksFromCategory(array $category): array
     {
         return $category['Aufgabe'];
     }
 
+    /**
+     * @param array $task
+     * @return string
+     */
     private function getQuestionFromTask(array $task): string
     {
         return $task['Fragestellung'];
     }
 
+    /**
+     * @param array $task
+     * @return string
+     */
     private function getAnswerFromTask(array $task): string
     {
         return $task['Antwort'];
     }
 
+    /**
+     * @param array $task
+     * @return string
+     */
     private function getValueFromTask(array $task): string
     {
         return $task['Wert'];
