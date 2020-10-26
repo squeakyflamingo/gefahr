@@ -1,2 +1,3 @@
 .idea
-Server/api/store/*.txt
+Server/api/store/buzzerState.txt
+Server/api/store/configForClients.txt
