@@ -6,7 +6,7 @@
     <title>jeopardy! - Konfiguration</title>
     <link rel="stylesheet" href="styling/form.css">
 </head>
-<body id="choose">
+<body>
     <h1 class="team">Konfigurator.</h1>
     <form method="POST">
         <div class="formGroup">
@@ -21,7 +21,7 @@
             <input type="color" name="team2color" value="#006400">
             <label for="team2color">Farbe für Team 1</label>
         </div>
-        <select name="gamefile">
+        <select class="custom-select" name="gamefile">
             <?php foreach ($filenames as $filename) {
                 echo "<option value='$filename'>$filename</option>";
             } ?>

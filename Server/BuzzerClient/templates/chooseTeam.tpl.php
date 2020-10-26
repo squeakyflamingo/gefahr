@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jeopardy! - Teamwähler</title>
     <link rel="stylesheet" href="styling/form.css">
+    <?php include 'styling/teamColors.tpl.php'; ?>
 </head>
-<body id="choose">
+<body>
     <h1 class="team">Team wählen.</h1>
     <form method="POST">
         <select class="custom-select" name="team">
