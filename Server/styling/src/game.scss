@@ -121,15 +121,7 @@ body {
     }
 
     &.overlayTeambuzzer {
-        &.team1 {
-            color: $team1text;
-            background-color: $team1bg;
-        }
-
-        &.team2 {
-            color: $team2text;
-            background-color: $team2bg;
-        }
+        @include teamcolors;
     }
 }
 
@@ -180,15 +172,7 @@ body {
             justify-content: center;
             align-items: center;
 
-            &.team1 {
-                color: $team1text;
-                background-color: $team1bg;
-            }
-
-            &.team2 {
-                color: $team2text;
-                background-color: $team2bg;
-            }
+            @include teamcolors;
         }
 
         .buzzerIndicator:not(.shown) {

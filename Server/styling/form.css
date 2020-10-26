@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -67,11 +68,7 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input[type=text] {
-  width: calc(100% - 1rem);
-}
-
-input[type=color] {
+input {
   width: 100%;
 }
 

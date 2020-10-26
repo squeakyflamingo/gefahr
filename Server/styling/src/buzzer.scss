@@ -26,15 +26,7 @@ button {
   max-width: 90%;
   font-size: 2rem;
 
-  &.team1 {
-    color: $team1text;
-    background-color: $team1bg;
-  }
-
-  &.team2 {
-    color: $team2text;
-    background-color: $team2bg;
-  }
+  @include teamcolors;
 }
 
 .overlay {

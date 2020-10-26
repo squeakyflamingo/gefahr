@@ -51,14 +51,9 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input[type="text"] {
-  width: calc(100% - 1rem);
-}
-
-input[type="color"] {
+input {
   width: 100%;
 }
-
 
 button {
   background-color: $card-bg;
