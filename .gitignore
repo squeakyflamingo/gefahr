@@ -1,3 +1,2 @@
-*.bat
 .idea
 Server/api/store/*.txt

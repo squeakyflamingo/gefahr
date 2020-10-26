@@ -1,2 +1,2 @@
 <?php
-header('Location: game.php');
+header('Location: client.php');
