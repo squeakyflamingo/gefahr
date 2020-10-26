@@ -15,6 +15,16 @@ class API
             $this->buzzerStateFile = 'api/store/buzzerState.txt';
             $this->clientConfigFile = 'api/store/configForClients.txt';
         }
+
+        if (!file_exists($this->buzzerStateFile)) {
+            $file = fopen($this->buzzerStateFile, "w");
+            fwrite($file, "reset");
+            fclose($file);
+        }
+
+        if (!file_exists($this->clientConfigFile)) {
+            fclose(fopen($this->clientConfigFile, "w"));
+        }
     }
 
     public function setBuzzerState(string $value = 'reset'): void
